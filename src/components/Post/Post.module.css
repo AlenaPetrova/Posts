@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 0 16px;
+}
+
+.btnBox {
+  display: flex;
+  justify-content: end;
+}
+
+.reactionsBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 36px;
+}
+
+.btnBack {
+  display: flex;
+  place-items: center;
+  gap: 6px;
+  font-size: 1.5rem;
+  padding: 4px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.width {
+  max-width: 848px;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  gap: 24px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.counter {
+  line-height: 1.1;
+  color: var(--color-gray);
+}
+
+.btn {
+  min-width: 36px;
+}
+
+.img {
+  transition-duration: 0.5s;
+  &:hover {
+    width: 36px;
+    aspect-ratio: 1;
+  }
+}

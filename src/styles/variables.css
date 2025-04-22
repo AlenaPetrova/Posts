@@ -1,0 +1,13 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+  --color-light-gray: #f4f4f4;
+  --color-gray: #4F4F4F;
+  --color-dark-gray: #333333;
+  --color-border-opacity: rgba(145 158 171 / 0.32);
+
+  --border-radius-small: 6px;
+  --border-radius-medium: 12px;
+
+  --font-family: "Roboto", sans-serif;
+}
