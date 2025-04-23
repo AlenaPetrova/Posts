@@ -3,8 +3,12 @@ import styles from "./Posts.module.css";
 import { IPost } from "../../types/types";
 import usePosts from "../../hooks/usePosts";
 
-const Posts: React.FC = () => {
-  const { posts, isLoading, error } = usePosts();
+interface IPostsProp {
+  searchPosts: string;
+}
+
+const Posts: React.FC<IPostsProp> = ({ searchPosts }) => {
+  const { posts, isLoading, error } = usePosts(searchPosts);
   const url = "../../../public/images/Image.png";
 
   return (
@@ -14,32 +18,40 @@ const Posts: React.FC = () => {
 
       {posts && (
         <>
-          <div className={styles.postContainer}>
-            <Post
-              id={posts[0].id}
-              image={url}
-              title={posts[0].title}
-              body={posts[0].body}
-              isFirstChild={true}
-            ></Post>
-          </div>
-
-          <div className={styles.postsMasonry}>
-            {posts.map((post: IPost) => (
-              <div
-                className={[styles.postMasonry, styles.postContainer].join(" ")}
-                key={post.id}
-              >
+          {posts.length === 0 ? (
+            <h2>Посты с названием {searchPosts} не найдены!</h2>
+          ) : (
+            <>
+              <div className={styles.postContainer}>
                 <Post
-                  id={post.id}
+                  id={posts[0].id}
                   image={url}
-                  title={post.title}
-                  body=""
-                  isFirstChild={false}
+                  title={posts[0].title}
+                  body={posts[0].body}
+                  isFirstChild={true}
                 ></Post>
               </div>
-            ))}
-          </div>
+
+              <div className={styles.postsMasonry}>
+                {posts.map((post: IPost) => (
+                  <div
+                    className={[styles.postMasonry, styles.postContainer].join(
+                      " "
+                    )}
+                    key={post.id}
+                  >
+                    <Post
+                      id={post.id}
+                      image={url}
+                      title={post.title}
+                      body=""
+                      isFirstChild={false}
+                    ></Post>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </>
       )}
     </>

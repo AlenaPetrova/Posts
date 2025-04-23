@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IPost } from "../types/types";
 
+export interface IGetPostsProps {
+  limit?: string;
+  title?: string;
+}
+
 export const postApi = createApi({
   reducerPath: "postApi",
   tagTypes: ["Posts"],
@@ -8,10 +13,10 @@ export const postApi = createApi({
     baseUrl: "https://jsonplaceholder.typicode.com",
   }),
   endpoints: (build) => ({
-    getPosts: build.query<IPost[], string & string>({
-      query: (limit = "", title = "") => ({
+    getPosts: build.query<IPost[], IGetPostsProps>({
+      query: ({limit="", title=""}) => ({
         url: `/posts?${limit && `_limit=${limit}`}&${
-          title && `_search=${title}`
+          title && `title=${title}`
         }`,
       }),
       providesTags: () => ["Posts"],
