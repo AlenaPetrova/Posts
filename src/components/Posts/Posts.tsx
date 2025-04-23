@@ -1,12 +1,10 @@
 import Post from "../Post/Post";
 import styles from "./Posts.module.css";
 import { IPost } from "../../types/types";
-import { useGetPostsQuery } from "../../store";
+import usePosts from "../../hooks/usePosts";
 
 const Posts: React.FC = () => {
-  const limit = "7";
-  const { data: posts, isLoading, error } = useGetPostsQuery(limit);
-
+  const { posts, isLoading, error } = usePosts();
   const url = "../../../public/images/Image.png";
 
   return (

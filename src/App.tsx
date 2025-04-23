@@ -3,16 +3,19 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/routes";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import ReactionsProvider from "./hooks/useContext";
+import ReactionsProvider from "./hooks/useReactionsContext";
+import DictionaryProvider from "./hooks/useDictionaryContext";
 
 const App: React.FC = () => {
   return (
     <>
-      <ReactionsProvider>
-        <Provider store={store}>
-          <RouterProvider router={router}></RouterProvider>
-        </Provider>
-      </ReactionsProvider>
+      <Provider store={store}>
+        <DictionaryProvider>
+          <ReactionsProvider>
+            <RouterProvider router={router}></RouterProvider>
+          </ReactionsProvider>
+        </DictionaryProvider>
+      </Provider>
     </>
   );
 };

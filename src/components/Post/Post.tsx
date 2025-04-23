@@ -1,8 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { IPost } from "../../types/types";
+import { IDict, IPost } from "../../types/types";
 import ReactionsBox from "../ReactionsBox/ReactionsBox";
 import Button from "../UI/Button/Button";
 import styles from "./Post.module.css";
+import { useContext } from "react";
+import { DictionaryContext } from "../../hooks/useDictionaryContext";
 
 interface IPostProps extends IPost {
   isFirstChild?: boolean;
@@ -17,7 +19,7 @@ const Post: React.FC<IPostProps> = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const dict = useContext(DictionaryContext) as IDict;
   return (
     <>
       {location.pathname === "/" && (
@@ -27,7 +29,7 @@ const Post: React.FC<IPostProps> = ({
             {isFirstChild ? (
               <div className={styles.reactionsBox}>
                 <h3>{title}</h3>
-                <ReactionsBox  />
+                <ReactionsBox num={dict[id]} />
               </div>
             ) : (
               <h3>{title}</h3>
@@ -40,7 +42,7 @@ const Post: React.FC<IPostProps> = ({
               </div>
             ) : (
               <div className={styles.reactionsBox}>
-                <ReactionsBox  />
+                <ReactionsBox num={dict[id]} />
                 <Button onClick={() => navigate(`/${id}`)}>Читать далее</Button>
               </div>
             )}
@@ -55,7 +57,7 @@ const Post: React.FC<IPostProps> = ({
               <img src="../../../public/svg/arrowBack.svg" alt="back to" />
               Вернуться к статьям
             </button>
-            <ReactionsBox  />
+            <ReactionsBox num={dict[id]} />
           </div>
           <div className={styles.content}>
             <h2>{title}</h2>

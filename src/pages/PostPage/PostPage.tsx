@@ -12,7 +12,12 @@ const PostPage: React.FC = () => {
   return (
     <div className={styles.container}>
       {post && (
-        <Post id={post.id} image={url} title={post.title} body={post.body} />
+        <Post
+          id={post.id}
+          image={url}
+          title={post.title}
+          body={post.body}
+        />
       )}
     </div>
   );

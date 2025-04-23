@@ -11,3 +11,7 @@ export interface IReactions {
   handleLike: () => void;
   handleDislike: () => void;
 }
+
+export interface IDict {
+  [key: string]: number;
+}

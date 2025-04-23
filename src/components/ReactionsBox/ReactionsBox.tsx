@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import styles from "./ReactionsBox.module.css";
-import { ReactionsContext } from "../../hooks/useContext";
-import { IReactions } from "../../types/types";
+import { ReactionsContext } from "../../hooks/useReactionsContext";
 
-const ReactionsBox: React.FC = () => {
-  const { like, dislike, handleLike, handleDislike } =
-    useContext(ReactionsContext) as IReactions;
+const ReactionsBox: React.FC<{ num: number }> = ({ num }) => {
+  const reactionsArr = useContext(ReactionsContext);
+  const { like, dislike, handleLike, handleDislike } = reactionsArr[num];
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
