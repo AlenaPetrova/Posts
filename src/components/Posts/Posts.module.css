@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   gap: 24px;
-  max-height: 200vh;
+  max-height: 300vh;
 }
 
 .postMasonry {
@@ -14,21 +14,6 @@
 }
 .postMasonry:nth-child(2n+1) {
   order: 2;
-}
-
-
-.postContainer {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-light-gray);
-  border-radius: var(--border-radius-medium);
-  padding-bottom: 32px;
-
-  -webkit-box-shadow: 0 0 1px 0 rgba(0 0 0 / 0.04),
-    0 2px 6px 0 rgba(0 0 0 / 0.04), 0 10px 20px 0 rgba(0 0 0 / 0.04);
-  -moz-box-shadow: 0 0 1px 0 rgba(0 0 0 / 0.04), 0 2px 6px 0 rgba(0 0 0 / 0.04),
-    0 10px 20px 0 rgba(0 0 0 / 0.04);
-  box-shadow: 0 0 1px 0 rgba(0 0 0 / 0.04), 0 2px 6px 0 rgba(0 0 0 / 0.04),
-    0 10px 20px 0 rgba(0 0 0 / 0.04);
 }
 
 .postMasonry:first-child {

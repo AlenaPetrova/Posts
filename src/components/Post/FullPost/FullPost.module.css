@@ -1,0 +1,30 @@
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 36px;
+}
+
+.btnBack {
+  display: flex;
+  place-items: center;
+  gap: 6px;
+  font-size: 1.5rem;
+  padding: 4px 0;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.width {
+  max-width: 848px;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}

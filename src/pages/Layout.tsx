@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 
 const Layout: React.FC = () => {
   return (
-    <div className="container">
-        <Outlet />
+    <div className="width-container">
+      <Outlet />
     </div>
   );
 };

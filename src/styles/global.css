@@ -10,9 +10,15 @@
   box-sizing: inherit;
 }
 
-.container {
+.width-container {
   max-width: 1140px;
   margin: 4rem auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 h1 {

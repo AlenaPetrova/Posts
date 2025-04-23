@@ -6,7 +6,7 @@ const Input: React.FC<InputHTMLAttributes<HTMLInputElement>> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <input type="search" className={styles.input} {...props} />
+      <input className={styles.input} {...props} />
       <div className={styles.svg} />
     </div>
   );
