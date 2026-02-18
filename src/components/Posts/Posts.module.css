@@ -1,21 +1,40 @@
 .postsMasonry {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 24px;
-  max-height: 300vh;
+  width: 100%;
+  max-height: 300vh; */
+  column-count: 3;
+  column-gap: 20px;
 }
 
 .postMasonry {
-  max-width: calc(50% - 12px);
+  /* max-width: calc(50% - 12px); */
+  display: inline-block; /* важно для columns */
+  width: 100%;
+  margin-bottom: 20px;
+  break-inside: avoid; /* предотвращает разрыв элементов */
 }
-.postMasonry:nth-child(2n) {
+.postMasonry:nth-child(odd) {
   order: 1;
 }
-.postMasonry:nth-child(2n+1) {
+.postMasonry:nth-child(even) {
   order: 2;
 }
 
 .postMasonry:first-child {
   display: none;
+}
+
+@media (max-width: 1200px) {
+  .postsMasonry {
+      column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .postsMasonry {
+      column-count: 1;
+  }
 }

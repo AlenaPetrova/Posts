@@ -6,7 +6,9 @@ const PostPage: React.FC = () => {
   const { postId } = useParams();
   const { data: post } = useGetPostQuery(postId);
 
-  const url = "../../../public/images/Image.png";
+  // const url = "../../../public/images/Image.png";
+  const url = "/public/images/Image.png";
+
 
   return (
     <div className="flex-container">
