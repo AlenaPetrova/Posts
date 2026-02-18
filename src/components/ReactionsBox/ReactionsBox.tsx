@@ -13,13 +13,13 @@ const ReactionsBox: React.FC<{ num: number }> = ({ num }) => {
           {like.isLike ? (
             <img
               className={styles.img}
-              src="/public/svg/likeOn.svg"
+              src="/svg/likeOn.svg"
               alt="likeOn"
             />
           ) : (
             <img
               className={styles.img}
-              src="/public/svg/likeOff.svg"
+              src="/svg/likeOff.svg"
               alt="likeOff"
             />
           )}
@@ -31,13 +31,13 @@ const ReactionsBox: React.FC<{ num: number }> = ({ num }) => {
           {dislike.isDislike ? (
             <img
               className={styles.img}
-              src="/public/svg/dislikeOn.svg"
+              src="/svg/dislikeOn.svg"
               alt="dislikeOn"
             />
           ) : (
             <img
               className={styles.img}
-              src="/public/svg/dislikeOff.svg"
+              src="/svg/dislikeOff.svg"
               alt="dislikeOff"
             />
           )}

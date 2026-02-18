@@ -8,7 +8,7 @@ interface IPostsProps {
 
 const Posts: React.FC<IPostsProps> = ({ posts }) => {
   // const url = "../../../public/images/Image.png";
-    const url = "/public/images/Image.png";
+    const url = "/images/Image.png";
 
   return (
     <>

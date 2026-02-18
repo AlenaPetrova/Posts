@@ -7,7 +7,7 @@ const PostPage: React.FC = () => {
   const { data: post } = useGetPostQuery(postId);
 
   // const url = "../../../public/images/Image.png";
-  const url = "/public/images/Image.png";
+  const url = "/images/Image.png";
 
 
   return (

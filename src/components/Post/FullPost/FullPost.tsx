@@ -13,7 +13,7 @@ const FullPost: React.FC<IPost> = ({ id, image, title, body }) => {
     <>
       <div className={styles.btnContainer}>
         <button className={styles.btnBack} onClick={() => navigate(-1)}>
-          <img src="/public/svg/arrowBack.svg" alt="back to" />
+          <img src="/svg/arrowBack.svg" alt="back to" />
           Вернуться к статьям
         </button>
         <ReactionsBox num={dict[id]} />
